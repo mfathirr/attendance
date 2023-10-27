@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Auth;
@@ -22,6 +23,7 @@ Route::get('/', function () {
 
 Route::resource('student', StudentController::class);
 Route::resource('teacher', TeacherController::class);
+Route::resource('kelas', KelasController::class);
 
 Auth::routes();
 

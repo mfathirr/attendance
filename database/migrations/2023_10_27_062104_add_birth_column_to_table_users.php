@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('birth_place')->after('password');
-            $table->integer('birth_time');
-            $table->enum('religion', ['islam', 'kristen', 'hindu', 'budha']);
-            $table->text('address');
+            $table->string('birth_time')->after('birth_place');
+            $table->enum('religion', ['Islam', 'Kristen', 'Hindu', 'Budha'])->after('birth_time');
+            $table->text('address')->after('religion');
         });
     }
 
