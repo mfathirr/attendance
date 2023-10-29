@@ -9,7 +9,6 @@
                     <th scope="col">Name</th>
                     <th scope="col">NISN</th>
                     <th scope="col">Place of Birth</th>
-                    <th scope="col">Date of Birth</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,8 +22,7 @@
                                 </a>
                             </th>
                             <td>{{ $item->nisn }}</td>
-                            <td>{{ $item->birth_place }}</td>
-                            <td>{{ $item->birth_time }}</td>
+                            <td>{{ $item->kelas->grade }} {{ $item->kelas->major }}</td>
                         </tr>
                     @endforeach
                 </tbody>

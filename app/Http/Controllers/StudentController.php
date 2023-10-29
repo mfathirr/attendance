@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kelas;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,8 @@ class StudentController extends Controller
     public function index()
     {
         $student = Student::all();
-        return view('student.index', compact('student'));
+        $kelas = Kelas::all();
+        return view('student.index', compact('student', 'kelas'));
     }
 
     /**
@@ -22,7 +24,8 @@ class StudentController extends Controller
     public function create()
     {
         $student = Student::all();
-        return view('student.create', compact('student'));
+        $kelas = Kelas::all();
+        return view('student.create', compact('student', 'kelas'));
     }
 
     /**
@@ -41,7 +44,8 @@ class StudentController extends Controller
     public function show($id)
     {
         $student = Student::find($id);
-        return view('student.detail', compact('student'));  
+        $kelas = Kelas::all();
+        return view('student.detail', compact('student', 'kelas'));  
     }
 
     /**

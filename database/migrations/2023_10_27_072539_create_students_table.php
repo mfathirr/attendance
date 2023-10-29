@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_class')->unsigned();
             $table->string('name');
             $table->integer('nisn');
             $table->string('birth_place');
             $table->integer('birth_time');
             $table->enum('religion', ['islam', 'kristen', 'hindu', 'budha']);
             $table->text('address');
+            $table->foreign('id_class')->on('classes')->references('id')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('birth_place');
+            $table->string('birth_time');
+            $table->enum('religion', ['Islam', 'Kristen', 'Hindu', 'Budha']);
+            $table->text('address');
             $table->rememberToken();
             $table->timestamps();
         });

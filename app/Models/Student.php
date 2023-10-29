@@ -11,4 +11,9 @@ class Student extends Model
 
     protected $table = 'students';
     protected $guarded = [];
+
+    public function kelas()
+    {
+        return $this->belongsTo('App\Models\Kelas', 'id_class');
+    }
 }
