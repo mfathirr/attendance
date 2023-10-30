@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Kelas;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class KelasController extends Controller
@@ -41,9 +42,11 @@ class KelasController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Kelas $kelas)
+    public function show($id)
     {
-        //
+        $kelas = Kelas::find($id);
+        $student = Student::where('id_class', $id)->get()->all();
+        return view('kelas.detail', compact('kelas', 'student'));
     }
 
     /**

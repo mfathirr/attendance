@@ -21,4 +21,5 @@ class Kelas extends Model
     {
         return $this->belongsTo('App\Models\Student', 'id_student');
     }
+
 }
