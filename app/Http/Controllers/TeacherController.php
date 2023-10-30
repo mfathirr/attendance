@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Teacher;
 use App\Models\User;
+use App\Models\Kelas;
+use App\Models\Student;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
 class TeacherController extends Controller
@@ -14,7 +16,8 @@ class TeacherController extends Controller
     public function index()
     {
         $teacher = User::all();
-        return view('teacher.index', compact('teacher'));
+        $kelas = Kelas::all();
+        return view('teacher.index', compact('teacher', 'kelas'));
     }
 
     /**
@@ -42,9 +45,11 @@ class TeacherController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User $teacher)
+    public function show($id)
     {
-        //
+        $teacher = User::findOrFail($id);
+        $kelas = Kelas::findOrFail($id);
+        return view('teacher.detail', compact('teacher', 'kelas'));
     }
 
     /**

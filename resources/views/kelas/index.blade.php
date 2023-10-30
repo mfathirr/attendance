@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <a href="{{ route('kelas.create') }}" class="btn btn-primary">Primary</a>
+        <a href="{{ route('kelas.create') }}" class="btn btn-primary"><i class="bi bi-plus-lg"></i></a>
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>

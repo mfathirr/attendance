@@ -5,7 +5,7 @@
         <div class="card w-25 m-auto">
         {{-- <img src="..." class="card-img-top" alt="..."> --}}
             <div class="card-body">
-                <h3 class="card-title"><span class="fw-bold">Class</span> : {{ $kelas->grade }} {{ $kelas->major }}</h3>
+                <h4 class="card-title"><span class="fw-bold">Class</span> : {{ $kelas->grade }} {{ $kelas->major }}</h4>
                 <h4 class="card-title"><span class="fw-bold">Teacher</span> : {{ $kelas->users->name }}</h4>
                 <h5 class="card-title"><span class="fw-bold">Student</span> : </h5>
 

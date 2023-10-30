@@ -45,6 +45,7 @@ class StudentController extends Controller
     {
         $student = Student::find($id);
         $kelas = Kelas::all();
+        // $kelas = Kelas::where('id_class', $id)->get()->all();
         return view('student.detail', compact('student', 'kelas'));  
     }
 

@@ -17,9 +17,14 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $guarded = [
 
-    ];
+    protected $table = 'users';
+    protected $guarded = [];
+
+    public function kelas()
+    {
+        return $this->belongsTo('App\Models\Kelas', 'id');
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -40,4 +45,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    
 }
